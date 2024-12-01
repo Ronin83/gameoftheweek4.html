@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of the Week - Monopoly GO!</title>
+    <!-- Adding Bangers font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2e2e2e;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Bangers', cursive;
+            font-size: 3em;
+            margin: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .subtitle {
+            font-size: 2em;
+            margin: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .image {
+            margin: 20px;
+            max-width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .shape {
+            position: absolute;
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            transform: rotate(45deg);
+        }
+
+        .shape2 {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            right: 15%;
+            transform: rotate(-45deg);
+        }
+
+        .shape3 {
+            width: 250px;
+            height: 250px;
+            top: 60%;
+            left: 20%;
+            transform: rotate(30deg);
+        }
+
+        .view-counter {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ffcc00;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Game of the Week</div>
+        <!-- Updated Image Path -->
+        <img src="images/monopoly-go.png" alt="Monopoly GO!" class="image">
+        <div class="subtitle">Monopoly GO!</div>
+        <div class="content">
+            Enjoy the week with Monopoly GO!, competing and having fun with your friends in this exciting multiplayer game!
+        </div>
+        <!-- View Counter Section -->
+        <div class="view-counter">
+            Members Viewed: <span id="viewCount">0</span>
+        </div>
+    </div>
+
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <script>
+        // Simple counter to simulate page views
+        let viewCount = localStorage.getItem('viewCount') || 0;
+        viewCount++;
+        localStorage.setItem('viewCount', viewCount);
+        document.getElementById('viewCount').textContent = viewCount;
+    </script>
+
+</body>
+</html>
